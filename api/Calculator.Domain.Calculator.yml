@@ -1,0 +1,514 @@
+### YamlMime:ManagedReference
+items:
+- uid: Calculator.Domain.Calculator
+  commentId: T:Calculator.Domain.Calculator
+  id: Calculator
+  parent: Calculator.Domain
+  children:
+  - Calculator.Domain.Calculator.Add(System.Int32,System.Int32)
+  - Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)
+  - Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)
+  - Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: Calculator
+  nameWithType: Calculator
+  fullName: Calculator.Domain.Calculator
+  type: Class
+  source:
+    remote:
+      path: Calculator/Calculator.Domain/Calculator.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004.git
+    id: Calculator
+    path: Calculator/Calculator.Domain/Calculator.cs
+    startLine: 5
+  assemblies:
+  - Calculator.Domain
+  namespace: Calculator.Domain
+  summary: Calculadora básica que realiza operaciones aritméticas fundamentales
+  example: []
+  syntax:
+    content: public class Calculator
+    content.vb: Public Class Calculator
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Calculator.Domain.Calculator.Add(System.Int32,System.Int32)
+  commentId: M:Calculator.Domain.Calculator.Add(System.Int32,System.Int32)
+  id: Add(System.Int32,System.Int32)
+  parent: Calculator.Domain.Calculator
+  langs:
+  - csharp
+  - vb
+  name: Add(int, int)
+  nameWithType: Calculator.Add(int, int)
+  fullName: Calculator.Domain.Calculator.Add(int, int)
+  type: Method
+  source:
+    remote:
+      path: Calculator/Calculator.Domain/Calculator.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004.git
+    id: Add
+    path: Calculator/Calculator.Domain/Calculator.cs
+    startLine: 13
+  assemblies:
+  - Calculator.Domain
+  namespace: Calculator.Domain
+  summary: Suma dos números enteros
+  example: []
+  syntax:
+    content: public int Add(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: Primer operando
+    - id: y
+      type: System.Int32
+      description: Segundo operando
+    return:
+      type: System.Int32
+      description: La suma de x e y
+    content.vb: Public Function Add(x As Integer, y As Integer) As Integer
+  overload: Calculator.Domain.Calculator.Add*
+  nameWithType.vb: Calculator.Add(Integer, Integer)
+  fullName.vb: Calculator.Domain.Calculator.Add(Integer, Integer)
+  name.vb: Add(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)
+  commentId: M:Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)
+  id: Subtract(System.Int32,System.Int32)
+  parent: Calculator.Domain.Calculator
+  langs:
+  - csharp
+  - vb
+  name: Subtract(int, int)
+  nameWithType: Calculator.Subtract(int, int)
+  fullName: Calculator.Domain.Calculator.Subtract(int, int)
+  type: Method
+  source:
+    remote:
+      path: Calculator/Calculator.Domain/Calculator.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004.git
+    id: Subtract
+    path: Calculator/Calculator.Domain/Calculator.cs
+    startLine: 21
+  assemblies:
+  - Calculator.Domain
+  namespace: Calculator.Domain
+  summary: Resta dos números enteros
+  example: []
+  syntax:
+    content: public int Subtract(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: Minuendo
+    - id: y
+      type: System.Int32
+      description: Sustraendo
+    return:
+      type: System.Int32
+      description: La diferencia de x menos y
+    content.vb: Public Function Subtract(x As Integer, y As Integer) As Integer
+  overload: Calculator.Domain.Calculator.Subtract*
+  nameWithType.vb: Calculator.Subtract(Integer, Integer)
+  fullName.vb: Calculator.Domain.Calculator.Subtract(Integer, Integer)
+  name.vb: Subtract(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)
+  commentId: M:Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)
+  id: Multiply(System.Int32,System.Int32)
+  parent: Calculator.Domain.Calculator
+  langs:
+  - csharp
+  - vb
+  name: Multiply(int, int)
+  nameWithType: Calculator.Multiply(int, int)
+  fullName: Calculator.Domain.Calculator.Multiply(int, int)
+  type: Method
+  source:
+    remote:
+      path: Calculator/Calculator.Domain/Calculator.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004.git
+    id: Multiply
+    path: Calculator/Calculator.Domain/Calculator.cs
+    startLine: 29
+  assemblies:
+  - Calculator.Domain
+  namespace: Calculator.Domain
+  summary: Multiplica dos números enteros
+  example: []
+  syntax:
+    content: public int Multiply(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: Primer factor
+    - id: y
+      type: System.Int32
+      description: Segundo factor
+    return:
+      type: System.Int32
+      description: El producto de x por y
+    content.vb: Public Function Multiply(x As Integer, y As Integer) As Integer
+  overload: Calculator.Domain.Calculator.Multiply*
+  nameWithType.vb: Calculator.Multiply(Integer, Integer)
+  fullName.vb: Calculator.Domain.Calculator.Multiply(Integer, Integer)
+  name.vb: Multiply(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)
+  commentId: M:Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)
+  id: Divide(System.Int32,System.Int32)
+  parent: Calculator.Domain.Calculator
+  langs:
+  - csharp
+  - vb
+  name: Divide(int, int)
+  nameWithType: Calculator.Divide(int, int)
+  fullName: Calculator.Domain.Calculator.Divide(int, int)
+  type: Method
+  source:
+    remote:
+      path: Calculator/Calculator.Domain/Calculator.cs
+      branch: main
+      repo: https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004.git
+    id: Divide
+    path: Calculator/Calculator.Domain/Calculator.cs
+    startLine: 38
+  assemblies:
+  - Calculator.Domain
+  namespace: Calculator.Domain
+  summary: Divide dos números enteros
+  example: []
+  syntax:
+    content: public int Divide(int x, int y)
+    parameters:
+    - id: x
+      type: System.Int32
+      description: Dividendo
+    - id: y
+      type: System.Int32
+      description: Divisor
+    return:
+      type: System.Int32
+      description: El cociente de x dividido por y
+    content.vb: Public Function Divide(x As Integer, y As Integer) As Integer
+  overload: Calculator.Domain.Calculator.Divide*
+  exceptions:
+  - type: System.DivideByZeroException
+    commentId: T:System.DivideByZeroException
+    description: Se lanza cuando y es cero
+  nameWithType.vb: Calculator.Divide(Integer, Integer)
+  fullName.vb: Calculator.Domain.Calculator.Divide(Integer, Integer)
+  name.vb: Divide(Integer, Integer)
+references:
+- uid: Calculator.Domain
+  commentId: N:Calculator.Domain
+  href: Calculator.html
+  name: Calculator.Domain
+  nameWithType: Calculator.Domain
+  fullName: Calculator.Domain
+  spec.csharp:
+  - uid: Calculator
+    name: Calculator
+    href: Calculator.html
+  - name: .
+  - uid: Calculator.Domain
+    name: Domain
+    href: Calculator.Domain.html
+  spec.vb:
+  - uid: Calculator
+    name: Calculator
+    href: Calculator.html
+  - name: .
+  - uid: Calculator.Domain
+    name: Domain
+    href: Calculator.Domain.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Calculator.Domain.Calculator.Add*
+  commentId: Overload:Calculator.Domain.Calculator.Add
+  href: Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Add_System_Int32_System_Int32_
+  name: Add
+  nameWithType: Calculator.Add
+  fullName: Calculator.Domain.Calculator.Add
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Calculator.Domain.Calculator.Subtract*
+  commentId: Overload:Calculator.Domain.Calculator.Subtract
+  href: Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Subtract_System_Int32_System_Int32_
+  name: Subtract
+  nameWithType: Calculator.Subtract
+  fullName: Calculator.Domain.Calculator.Subtract
+- uid: Calculator.Domain.Calculator.Multiply*
+  commentId: Overload:Calculator.Domain.Calculator.Multiply
+  href: Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Multiply_System_Int32_System_Int32_
+  name: Multiply
+  nameWithType: Calculator.Multiply
+  fullName: Calculator.Domain.Calculator.Multiply
+- uid: System.DivideByZeroException
+  commentId: T:System.DivideByZeroException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.dividebyzeroexception
+  name: DivideByZeroException
+  nameWithType: DivideByZeroException
+  fullName: System.DivideByZeroException
+- uid: Calculator.Domain.Calculator.Divide*
+  commentId: Overload:Calculator.Domain.Calculator.Divide
+  href: Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Divide_System_Int32_System_Int32_
+  name: Divide
+  nameWithType: Calculator.Divide
+  fullName: Calculator.Domain.Calculator.Divide

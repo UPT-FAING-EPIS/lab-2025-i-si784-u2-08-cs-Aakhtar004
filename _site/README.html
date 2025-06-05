@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>SESION DE LABORATORIO N&#176; 08: PRUEBAS UTILIZANDO LA DESARROLLO GUIADO POR EL COMPORTAMIENTO | Lab 8 Calculator </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="SESION DE LABORATORIO N&#176; 08: PRUEBAS UTILIZANDO LA DESARROLLO GUIADO POR EL COMPORTAMIENTO | Lab 8 Calculator ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="Lab 8 Calculator">
+            Lab 8 Calculator
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://classroom.github.com/a/LAA5TE63"><img src="https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg" alt="Review Assignment Due Date"></a>
+<a href="https://classroom.github.com/open-in-codespaces?assignment_repo_id=19708097"><img src="https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg" alt="Open in Codespaces"></a></p>
+<h1 id="sesion-de-laboratorio-n-08-pruebas-utilizando-la-desarrollo-guiado-por-el-comportamiento">SESION DE LABORATORIO N° 08: PRUEBAS UTILIZANDO LA DESARROLLO GUIADO POR EL COMPORTAMIENTO</h1>
+<h3 id="nombre">Nombre:</h3>
+<h2 id="objetivos">OBJETIVOS</h2>
+<ul>
+<li>Comprender el funcionamiento de las pruebas unitarias dentro de una aplicación utilizando el Framework de pruebas NUnit.</li>
+</ul>
+<h2 id="requerimientos">REQUERIMIENTOS</h2>
+<ul>
+<li>Conocimientos:
+<ul>
+<li>Conocimientos básicos de Bash (powershell).</li>
+<li>Conocimientos básicos de Contenedores (Docker).</li>
+</ul>
+</li>
+<li>Hardware:
+<ul>
+<li>Virtualization activada en el BIOS..</li>
+<li>CPU SLAT-capable feature.</li>
+<li>Al menos 4GB de RAM.</li>
+</ul>
+</li>
+<li>Software:
+<ul>
+<li>Windows 10 64bit: Pro, Enterprise o Education (1607 Anniversary Update, Build 14393 o Superior)</li>
+<li>Docker Desktop</li>
+<li>Powershell versión 7.x</li>
+<li>Net 6</li>
+<li>Visual Studio Code</li>
+</ul>
+</li>
+</ul>
+<h2 id="consideraciones-iniciales">CONSIDERACIONES INICIALES</h2>
+<ul>
+<li>Clonar el repositorio mediante git para tener los recursos necesarios</li>
+</ul>
+<h2 id="desarrollo">DESARROLLO</h2>
+<ol>
+<li>Iniciar la aplicación Powershell o Windows Terminal en modo administrador</li>
+<li>Ejecutar el siguiente comando para crear una nueva solución</li>
+</ol>
+<pre><code>dotnet new sln -o Calculator
+</code></pre>
+<ol start="3">
+<li>Acceder a la solución creada y ejecutar el siguiente comando para crear una nueva libreria de clases y adicionarla a la solución actual.</li>
+</ol>
+<pre><code>cd Calculator
+dotnet new classlib -o Calculator.Domain
+dotnet sln add ./Calculator.Domain/Calculator.Domain.csproj
+</code></pre>
+<ol start="4">
+<li>Ejecutar el siguiente comando para crear un nuevo proyecto de pruebas y adicionarla a la solución actual</li>
+</ol>
+<pre><code>dotnet new nunit -o Calculator.Domain.Tests
+dotnet sln add ./Calculator.Domain.Tests/Calculator.Domain.Tests.csproj
+dotnet add ./Calculator.Domain.Tests/Calculator.Domain.Tests.csproj package SpecFlow.NUnit
+dotnet add ./Calculator.Domain.Tests/Calculator.Domain.Tests.csproj package SpecFlow.Plus.LivingDocPlugin
+dotnet add ./Calculator.Domain.Tests/Calculator.Domain.Tests.csproj reference ./Calculator.Domain/Calculator.Domain.csproj
+</code></pre>
+<ol start="5">
+<li><p>Iniciar Visual Studio Code (VS Code) abriendo el folder de la solución como proyecto. En el proyecto Calculator.Domain, si existe un archivo Class1.cs proceder a eliminarlo. Asimismo en el proyecto Calculator.Domain.Tests si existiese un archivo UnitTest1.cs, también proceder a eliminarlo.</p>
+</li>
+<li><p>En VS Code, en el proyecto Calculator.Domain.Tests proceder a crear el folder &quot;Features&quot; y dentro de este crear el archivo Calculator.feature e introducir la siguiente historia de usuario:</p>
+</li>
+</ol>
+<pre><code class="lang-Gherkin">Feature: Como usuario quiero hacer operaciones aritmeticas para calcular resultados
+
+Scenario: Usuario suma dos numeros y el resultado es correcto
+	Given El numero 10
+    And el numero 5
+	When sumo
+	Then el resultado es 15
+
+Scenario: Usuario resta dos numeros y el resultado es correcto
+	Given El numero 10
+    And el numero 5
+	When resto
+	Then el resultado es 5
+</code></pre>
+<ol start="7">
+<li>Ahora proceder a crear la clase que brindaa soporte a este caso de usuario, en el proyecto Calculator.Domain, crear el archivo Calculator.cs e introducir el siguiente código.</li>
+</ol>
+<pre><code class="lang-C#">namespace Calculator.Domain;
+public class Calculator
+{
+    public int Add(int x, int y) =&gt; x + y;
+    public int Subtract(int x, int y) =&gt; x - y;
+}
+</code></pre>
+<ol start="8">
+<li>Finalmente unir la historia de usuario con la clase mediante pruebas, para esto crear en el proyecto Calculator.Domain.Tests crear el folder &quot;Steps&quot; y dentro de este crear el archivo CalculatorTests.cs e introducir el siguiente código.</li>
+</ol>
+<pre><code class="lang-C#">using NUnit.Framework;
+using TechTalk.SpecFlow;
+
+namespace Calculator.Domain.Tests.Steps
+{
+    [Binding]
+    public sealed class CalculatorTests
+    {
+        private readonly ScenarioContext _scenarioContext;
+        public Calculator Calculadora { get; set; }
+        private int _operador01 { get; set; }
+        private int _operador02 { get; set; }
+        private int _resultado { get; set; }
+        
+        public CalculatorTests(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+            Calculadora = new Calculator();
+        }
+
+        [Given(&quot;El numero (.*)&quot;)]
+        public void DadoElNumero(int operando01)
+        {
+            _operador01 = operando01;
+        }
+
+        [Given(&quot;el numero (.*)&quot;)]
+        public void yElNumero(int operando02)
+        {
+            _operador02 = operando02;
+        }
+
+        [When(&quot;sumo&quot;)]
+        public void CuandoSumo()
+        {
+            _resultado = Calculadora.Add(_operador01,_operador02);
+        }
+
+        [When(&quot;resto&quot;)]
+        public void CuandoResto()
+        {
+            _resultado = Calculadora.Subtract(_operador01,_operador02);
+        }
+
+        [Then(&quot;el resultado es (.*)&quot;)]
+        public void EntoncesElResultadoDeberiaSer(int resultado)
+        {
+            Assert.AreEqual(_resultado, resultado);
+        }        
+    }
+}
+</code></pre>
+<ol start="8">
+<li>Abrir un terminal en VS Code (CTRL + Ñ) o vuelva al terminal anteriormente abierto, y ejecutar los comandos:</li>
+</ol>
+<pre><code class="lang-Bash">dotnet test --collect:&quot;XPlat Code Coverage&quot;
+</code></pre>
+<ol start="9">
+<li>El resultado debe ser similar al siguiente.</li>
+</ol>
+<pre><code class="lang-Bash">Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     3, Duration: 12 ms
+</code></pre>
+<ol start="10">
+<li>Finalmente proceder a verificar la cobertura, dentro del proyecto Primes.Tests se dede haber generado una carpeta o directorio TestResults, en el cual posiblemente exista otra subpcarpeta o subdirectorio conteniendo un archivo con nombre <code>coverage.cobertura.xml</code>, si existe ese archivo proceder a ejecutar los siguientes comandos desde la linea de comandos abierta anteriomente, de los contrario revisar el paso 8:</li>
+</ol>
+<pre><code>dotnet tool install -g dotnet-reportgenerator-globaltool
+ReportGenerator &quot;-reports:./*/*/*/coverage.cobertura.xml&quot; &quot;-targetdir:Cobertura&quot; -reporttypes:HTML
+</code></pre>
+<ol start="11">
+<li><p>El comando anterior primero proceda instalar una herramienta llamada ReportGenerator (<a href="https://reportgenerator.io/">https://reportgenerator.io/</a>) la cual mediante la segunda parte del comando permitira generar un reporte en formato HTML con la cobertura obtenida de la ejecución de las pruebas. Este reporte debe localizarse dentro de una carpeta llamada Cobertura y puede acceder a el abriendo con un navegador de internet el archivo index.htm.</p>
+</li>
+<li><p>Finalmente proceder a verificar las pruebas en base a comportamiento, para esto ejecutar el siguiente comando en el terminal anteriormente abierto:</p>
+</li>
+</ol>
+<pre><code>dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+livingdoc test-assembly .\Calculator.Domain.Tests\bin\Debug\net7.0\Calculator.Domain.Tests.dll -t .\Calculator.Domain.Tests\bin\Debug\net7.0\TestExecution.json -o CalculatorTests.html
+</code></pre>
+<ol start="13">
+<li>El comando anterior primero proceda instalar una herramienta llamada Specflow +LivingDoc  (<a href="https://specflow.org/tools/living-doc/">https://specflow.org/tools/living-doc/</a>) la cual mediante la segunda parte del comando permitira generar un reporte en formato HTML con las pruebas en base a comportamiento creadas. Este reporte debe localizarse en el mismo directorio donde se encuentra actualmente y puede acceder a el abriendo con un navegador de internet el archivo index.htm.</li>
+</ol>
+<hr>
+<h2 id="actividades-encargadas">Actividades Encargadas</h2>
+<ol>
+<li>Adicionar los escenarios y casos de prueba para multiplicar y dividir.</li>
+<li>Completar la documentación del Clases, atributos y métodos para luego generar una automatización (publish_docs.yml) que genere la documentación utilizando DocFx y la publique en una Github Page</li>
+<li>Generar una automatización (publish_bdd_report.yml) que: * Compile el proyecto y ejecute las pruebas, * Genere el reporte BDD, * Publique el reporte en Github Page</li>
+<li>Generar una automatización (release.yml) que: * Genere el nuget con su codigo de matricula como version del componente, * Publique el nuget en Github Packages, * Genere el release correspondiente</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/UPT-FAING-EPIS/lab-2025-i-si784-u2-08-cs-Aakhtar004/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

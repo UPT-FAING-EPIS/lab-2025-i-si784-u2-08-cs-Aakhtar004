@@ -1,0 +1,72 @@
+{
+  "source_base_path": "C:/Users/PC-FAMILY-AO/Documents/Proyectos/LAB8/lab-2025-i-si784-u2-08-cs-Aakhtar004",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Calculator.Domain.Calculator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Calculator.Domain.Calculator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Calculator.Domain.Calculator",
+      "Summary": "<p sourcefile=\"api/Calculator.Domain.Calculator.yml\" sourcestartlinenumber=\"1\">Calculadora básica que realiza operaciones aritméticas fundamentales</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Calculator.Domain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Calculator.Domain.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Calculator.Domain",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

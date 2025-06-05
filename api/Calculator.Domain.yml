@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Calculator.Domain
+  commentId: N:Calculator.Domain
+  id: Calculator.Domain
+  children:
+  - Calculator.Domain.Calculator
+  langs:
+  - csharp
+  - vb
+  name: Calculator.Domain
+  nameWithType: Calculator.Domain
+  fullName: Calculator.Domain
+  type: Namespace
+  assemblies:
+  - Calculator.Domain
+references:
+- uid: Calculator.Domain.Calculator
+  commentId: T:Calculator.Domain.Calculator
+  href: Calculator.Domain.Calculator.html
+  name: Calculator
+  nameWithType: Calculator
+  fullName: Calculator.Domain.Calculator

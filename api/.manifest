@@ -1,0 +1,8 @@
+{
+  "Calculator.Domain": "Calculator.Domain.yml",
+  "Calculator.Domain.Calculator": "Calculator.Domain.Calculator.yml",
+  "Calculator.Domain.Calculator.Add(System.Int32,System.Int32)": "Calculator.Domain.Calculator.yml",
+  "Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)": "Calculator.Domain.Calculator.yml",
+  "Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)": "Calculator.Domain.Calculator.yml",
+  "Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)": "Calculator.Domain.Calculator.yml"
+}
