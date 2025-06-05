@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '8.0.x'
     
     - name: Restore dependencies
       run: |
@@ -39,7 +39,7 @@ jobs:
     - name: Generate BDD Report with livingdoc
       run: |
         cd Calculator
-        livingdoc test-assembly ./Calculator.Domain.Tests/bin/Debug/net9.0/Calculator.Domain.Tests.dll -o BDDReport.html
+        livingdoc test-assembly ./Calculator.Domain.Tests/bin/Debug/net8.0/Calculator.Domain.Tests.dll -o BDDReport.html
     
     - name: Upload BDD Report
       uses: actions/upload-artifact@v4
