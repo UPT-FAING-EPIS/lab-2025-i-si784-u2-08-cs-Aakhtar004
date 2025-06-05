@@ -1,0 +1,100 @@
+name: Release and NuGet Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 1.0.0)'
+        required: true
+        default: '1.0.0'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+    
+    - name: Set version
+      id: version
+      run: |
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+          echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+        else
+          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+        fi
+        # Usar código de matrícula como parte de la versión
+        echo "PACKAGE_VERSION=${{ steps.version.outputs.VERSION }}-si784004" >> $GITHUB_OUTPUT
+    
+    - name: Restore dependencies
+      run: |
+        cd Calculator
+        dotnet restore
+    
+    - name: Build
+      run: |
+        cd Calculator
+        dotnet build --configuration Release --no-restore
+    
+    - name: Run tests
+      run: |
+        cd Calculator
+        dotnet test --configuration Release --no-build --verbosity normal
+    
+    - name: Pack NuGet
+      run: |
+        cd Calculator
+        dotnet pack Calculator.Domain/Calculator.Domain.csproj \
+          --configuration Release \
+          --no-build \
+          --output ./packages \
+          /p:PackageVersion=${{ steps.version.outputs.PACKAGE_VERSION }} \
+          /p:Version=${{ steps.version.outputs.VERSION }} \
+          /p:AssemblyVersion=${{ steps.version.outputs.VERSION }} \
+          /p:FileVersion=${{ steps.version.outputs.VERSION }}
+    
+    - name: Push to GitHub Packages
+      run: |
+        cd Calculator
+        dotnet nuget push ./packages/*.nupkg \
+          --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json \
+          --api-key ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.version.outputs.VERSION }}
+        release_name: Release v${{ steps.version.outputs.VERSION }}
+        body: |
+          ## Calculator Release v${{ steps.version.outputs.VERSION }}
+          
+          ### Changes
+          - Calculadora con operaciones básicas (suma, resta, multiplicación, división)
+          - Pruebas BDD implementadas con SpecFlow
+          - Documentación generada automáticamente
+          
+          ### NuGet Package
+          - Version: ${{ steps.version.outputs.PACKAGE_VERSION }}
+          - Disponible en GitHub Packages
+        draft: false
+        prerelease: false
+    
+    - name: Upload NuGet Package
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: Calculator/packages/Calculator.Domain.${{ steps.version.outputs.PACKAGE_VERSION }}.nupkg
+        asset_name: Calculator.Domain.${{ steps.version.outputs.PACKAGE_VERSION }}.nupkg
+        asset_content_type: application/zip
