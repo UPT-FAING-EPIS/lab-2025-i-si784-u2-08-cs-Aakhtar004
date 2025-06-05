@@ -1,0 +1,79 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Calculator.Domain
+  name: Calculator.Domain
+  href: api/Calculator.Domain.html
+  commentId: N:Calculator.Domain
+  fullName: Calculator.Domain
+  nameWithType: Calculator.Domain
+- uid: Calculator.Domain.Calculator
+  name: Calculator
+  href: api/Calculator.Domain.Calculator.html
+  commentId: T:Calculator.Domain.Calculator
+  fullName: Calculator.Domain.Calculator
+  nameWithType: Calculator
+- uid: Calculator.Domain.Calculator.Add(System.Int32,System.Int32)
+  name: Add(int, int)
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Add_System_Int32_System_Int32_
+  commentId: M:Calculator.Domain.Calculator.Add(System.Int32,System.Int32)
+  name.vb: Add(Integer, Integer)
+  fullName: Calculator.Domain.Calculator.Add(int, int)
+  fullName.vb: Calculator.Domain.Calculator.Add(Integer, Integer)
+  nameWithType: Calculator.Add(int, int)
+  nameWithType.vb: Calculator.Add(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Add*
+  name: Add
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Add_
+  commentId: Overload:Calculator.Domain.Calculator.Add
+  isSpec: "True"
+  fullName: Calculator.Domain.Calculator.Add
+  nameWithType: Calculator.Add
+- uid: Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)
+  name: Divide(int, int)
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Divide_System_Int32_System_Int32_
+  commentId: M:Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)
+  name.vb: Divide(Integer, Integer)
+  fullName: Calculator.Domain.Calculator.Divide(int, int)
+  fullName.vb: Calculator.Domain.Calculator.Divide(Integer, Integer)
+  nameWithType: Calculator.Divide(int, int)
+  nameWithType.vb: Calculator.Divide(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Divide*
+  name: Divide
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Divide_
+  commentId: Overload:Calculator.Domain.Calculator.Divide
+  isSpec: "True"
+  fullName: Calculator.Domain.Calculator.Divide
+  nameWithType: Calculator.Divide
+- uid: Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)
+  name: Multiply(int, int)
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Multiply_System_Int32_System_Int32_
+  commentId: M:Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)
+  name.vb: Multiply(Integer, Integer)
+  fullName: Calculator.Domain.Calculator.Multiply(int, int)
+  fullName.vb: Calculator.Domain.Calculator.Multiply(Integer, Integer)
+  nameWithType: Calculator.Multiply(int, int)
+  nameWithType.vb: Calculator.Multiply(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Multiply*
+  name: Multiply
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Multiply_
+  commentId: Overload:Calculator.Domain.Calculator.Multiply
+  isSpec: "True"
+  fullName: Calculator.Domain.Calculator.Multiply
+  nameWithType: Calculator.Multiply
+- uid: Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)
+  name: Subtract(int, int)
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Subtract_System_Int32_System_Int32_
+  commentId: M:Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)
+  name.vb: Subtract(Integer, Integer)
+  fullName: Calculator.Domain.Calculator.Subtract(int, int)
+  fullName.vb: Calculator.Domain.Calculator.Subtract(Integer, Integer)
+  nameWithType: Calculator.Subtract(int, int)
+  nameWithType.vb: Calculator.Subtract(Integer, Integer)
+- uid: Calculator.Domain.Calculator.Subtract*
+  name: Subtract
+  href: api/Calculator.Domain.Calculator.html#Calculator_Domain_Calculator_Subtract_
+  commentId: Overload:Calculator.Domain.Calculator.Subtract
+  isSpec: "True"
+  fullName: Calculator.Domain.Calculator.Subtract
+  nameWithType: Calculator.Subtract
