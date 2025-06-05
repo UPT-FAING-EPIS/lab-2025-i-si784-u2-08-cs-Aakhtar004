@@ -5,11 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <DocumentationFile>Calculator.Domain.xml</DocumentationFile>
-    
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Calculator.Domain.xml</DocumentationFile>
-
 
     <!-- NuGet Package Properties -->
     <PackageId>Calculator.Domain</PackageId>

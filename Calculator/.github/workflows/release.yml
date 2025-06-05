@@ -31,7 +31,6 @@ jobs:
         else
           echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
         fi
-        # Usar código de matrícula como parte de la versión
         echo "PACKAGE_VERSION=${{ steps.version.outputs.VERSION }}-si784004" >> $GITHUB_OUTPUT
     
     - name: Restore dependencies
@@ -49,7 +48,7 @@ jobs:
         cd Calculator
         dotnet test --configuration Release --no-build --verbosity normal
     
-    - name: Pack NuGet
+    - name: Pack NuGet package
       run: |
         cd Calculator
         dotnet pack Calculator.Domain/Calculator.Domain.csproj \
@@ -61,7 +60,7 @@ jobs:
           /p:AssemblyVersion=${{ steps.version.outputs.VERSION }} \
           /p:FileVersion=${{ steps.version.outputs.VERSION }}
     
-    - name: Push to GitHub Packages
+    - name: Push nuget package to GitHub Packages
       run: |
         cd Calculator
         dotnet nuget push ./packages/*.nupkg \
@@ -79,9 +78,9 @@ jobs:
           ## Calculator Release v${{ steps.version.outputs.VERSION }}
           
           ### Changes
-          - Calculadora con operaciones básicas (suma, resta, multiplicación, división)
-          - Pruebas BDD implementadas con SpecFlow
-          - Documentación generada automáticamente
+          - Calculadora con operaciones básicas
+          - Pruebas BDD con SpecFlow
+          - Documentación automática
           
           ### NuGet Package
           - Version: ${{ steps.version.outputs.PACKAGE_VERSION }}
@@ -89,7 +88,7 @@ jobs:
         draft: false
         prerelease: false
     
-    - name: Upload NuGet Package
+    - name: Upload NuGet Package to Release
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

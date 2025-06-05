@@ -28,7 +28,7 @@ jobs:
         cd Calculator
         dotnet build --no-restore
     
-    - name: Install LivingDoc
+    - name: Install LivingDoc CLI tool
       run: dotnet tool install -g SpecFlow.Plus.LivingDoc.CLI
     
     - name: Run tests
@@ -36,7 +36,7 @@ jobs:
         cd Calculator
         dotnet test --no-build --verbosity normal --logger trx --collect:"XPlat Code Coverage"
     
-    - name: Generate BDD Report
+    - name: Generate BDD Report with livingdoc
       run: |
         cd Calculator
         livingdoc test-assembly ./Calculator.Domain.Tests/bin/Debug/net9.0/Calculator.Domain.Tests.dll -o BDDReport.html
