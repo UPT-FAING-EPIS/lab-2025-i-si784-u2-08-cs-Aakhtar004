@@ -1,29 +1,26 @@
 {
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
   "metadata": [
     {
       "src": [
         {
-          "files": ["**/*.csproj"],
-          "exclude": ["**/bin/**", "**/obj/**", "**/*.Tests/**"]
+          "src": "../src",
+          "files": [
+            "**/*.csproj"
+          ]
         }
       ],
-      "dest": "api",
-      "disableGitFeatures": false,
-      "disableDefaultFilter": false
+      "dest": "api"
     }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
-        ]
-      },
-      {
-        "files": [
-          "docs/**.md",
-          "*.md"
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
         ]
       }
     ],
@@ -34,28 +31,16 @@
         ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**"
-        ]
-      }
-    ],
-    "dest": "_site",
-    "globalMetadataFiles": [],
-    "fileMetadataFiles": [],
+    "output": "_site",
     "template": [
-      "default"
+      "default",
+      "modern"
     ],
-    "postProcessors": [],
-    "markdownEngineName": "markdig",
-    "noLangKeyword": false,
-    "keepFileLink": false,
-    "cleanupCacheHistory": false,
-    "disableGitFeatures": false
+    "globalMetadata": {
+      "_appName": "Lab 8 Calculator",
+      "_appTitle": "Lab 8 Calculator",
+      "_enableSearch": true,
+      "pdf": true
+    }
   }
 }
