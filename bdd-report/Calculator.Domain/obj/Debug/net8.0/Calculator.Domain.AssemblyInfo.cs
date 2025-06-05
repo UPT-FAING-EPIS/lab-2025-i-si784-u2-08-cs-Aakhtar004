@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Calculadora básica con operaciones aritméticas fundamentales")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2022.742.61.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2022.0742.61+57b51b5719793e010667fbe735d1b14539701330")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2022.0742.61+10c801d466c06bb2624d88cb0d2bea525edbe937")]
 [assembly: System.Reflection.AssemblyProductAttribute("Calculator Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Calculator.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2022.742.61.0")]
