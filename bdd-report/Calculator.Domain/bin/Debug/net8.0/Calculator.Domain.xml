@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Calculator.Domain</name>
+    </assembly>
+    <members>
+        <member name="T:Calculator.Domain.Calculator">
+            <summary>
+            Calculadora básica que realiza operaciones aritméticas fundamentales
+            </summary>
+        </member>
+        <member name="M:Calculator.Domain.Calculator.Add(System.Int32,System.Int32)">
+            <summary>
+            Suma dos números enteros
+            </summary>
+            <param name="x">Primer operando</param>
+            <param name="y">Segundo operando</param>
+            <returns>La suma de x e y</returns>
+        </member>
+        <member name="M:Calculator.Domain.Calculator.Subtract(System.Int32,System.Int32)">
+            <summary>
+            Resta dos números enteros
+            </summary>
+            <param name="x">Minuendo</param>
+            <param name="y">Sustraendo</param>
+            <returns>La diferencia de x menos y</returns>
+        </member>
+        <member name="M:Calculator.Domain.Calculator.Multiply(System.Int32,System.Int32)">
+            <summary>
+            Multiplica dos números enteros
+            </summary>
+            <param name="x">Primer factor</param>
+            <param name="y">Segundo factor</param>
+            <returns>El producto de x por y</returns>
+        </member>
+        <member name="M:Calculator.Domain.Calculator.Divide(System.Int32,System.Int32)">
+            <summary>
+            Divide dos números enteros
+            </summary>
+            <param name="x">Dividendo</param>
+            <param name="y">Divisor</param>
+            <returns>El cociente de x dividido por y</returns>
+            <exception cref="T:System.DivideByZeroException">Se lanza cuando y es cero</exception>
+        </member>
+    </members>
+</doc>

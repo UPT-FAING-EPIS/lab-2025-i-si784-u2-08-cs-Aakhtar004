@@ -1,0 +1,13 @@
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/bin/Debug/net8.0/Calculator.Domain.xml
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/bin/Debug/net8.0/Calculator.Domain.deps.json
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/bin/Debug/net8.0/Calculator.Domain.dll
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/bin/Debug/net8.0/Calculator.Domain.pdb
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.AssemblyInfoInputs.cache
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.AssemblyInfo.cs
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.csproj.CoreCompileInputs.cache
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.sourcelink.json
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.dll
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/refint/Calculator.Domain.dll
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/Calculator.Domain.pdb
+/home/runner/work/lab-2025-i-si784-u2-08-cs-Aakhtar004/lab-2025-i-si784-u2-08-cs-Aakhtar004/Calculator/Calculator.Domain/obj/Debug/net8.0/ref/Calculator.Domain.dll
