@@ -127,8 +127,6 @@ jobs:
         # This is the **HOMEPAGE**.
 
         ## [Reporte Cobertura HTML](Cobertura/index.html)
-
-        ## [Reporte Cobertura Markdown](Cobertura/SummaryGithub.md)
         
         ## [Documentacion de Clases, atributos y métodos](docs/Calculator.Domain.html)
 
