@@ -1,99 +1,47 @@
-name: Release and NuGet Package
+name: 4. Release Package
+env:
+  DOTNET_VERSION: '8.0'
+on: push
 
-on:
-  push:
-    tags:
-      - 'v*'
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version number (e.g., 1.0.0)'
-        required: true
-        default: '1.0.0'
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    
-    - name: Set version
-      id: version
-      run: |
-        if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-          echo "VERSION=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-        else
-          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-        fi
-        echo "PACKAGE_VERSION=${{ steps.version.outputs.VERSION }}-si784004" >> $GITHUB_OUTPUT
-    
-    - name: Restore dependencies
-      run: |
-        cd Calculator
-        dotnet restore
-    
-    - name: Build
-      run: |
-        cd Calculator
-        dotnet build --configuration Release --no-restore
-    
-    - name: Run tests
-      run: |
-        cd Calculator
-        dotnet test --configuration Release --no-build --verbosity normal
-    
-    - name: Pack NuGet package
-      run: |
-        cd Calculator
-        dotnet pack Calculator.Domain/Calculator.Domain.csproj \
-          --configuration Release \
-          --no-build \
-          --output ./packages \
-          /p:PackageVersion=${{ steps.version.outputs.PACKAGE_VERSION }} \
-          /p:Version=${{ steps.version.outputs.VERSION }} \
-          /p:AssemblyVersion=${{ steps.version.outputs.VERSION }} \
-          /p:FileVersion=${{ steps.version.outputs.VERSION }}
-    
-    - name: Push nuget package to GitHub Packages
-      run: |
-        cd Calculator
-        dotnet nuget push ./packages/*.nupkg \
-          --source https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json \
-          --api-key ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Create Release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: v${{ steps.version.outputs.VERSION }}
-        release_name: Release v${{ steps.version.outputs.VERSION }}
-        body: |
-          ## Calculator Release v${{ steps.version.outputs.VERSION }}
-          
-          ### Changes
-          - Calculadora con operaciones básicas
-          - Pruebas BDD con SpecFlow
-          - Documentación automática
-          
-          ### NuGet Package
-          - Version: ${{ steps.version.outputs.PACKAGE_VERSION }}
-          - Disponible en GitHub Packages
-        draft: false
-        prerelease: false
-    
-    - name: Upload NuGet Package to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: Calculator/packages/Calculator.Domain.${{ steps.version.outputs.PACKAGE_VERSION }}.nupkg
-        asset_name: Calculator.Domain.${{ steps.version.outputs.PACKAGE_VERSION }}.nupkg
-        asset_content_type: application/zip
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+        
+      - name: Restore dependencies && Build solution
+        run: |
+          cd Calculator
+          dotnet restore
+          dotnet build
+
+      - name: Pack NuGet package
+        run: |
+          dotnet pack Calculator/Calculator.Domain/Calculator.Domain.csproj -c Release \
+            -p:PackageVersion=202.207.4261 \
+            -p:RepositoryUrl=https://github.com/${{ github.repository }} \
+            -p:RepositoryType=git
+      
+      - name: NuGet sources
+        run: dotnet nuget list source
+      
+      - name: Push NuGet package to GitHub Packages
+        run: |
+          dotnet nuget push Calculator/Calculator.Domain/bin/Release/*.nupkg \ 
+          --skip-duplicate \ 
+          --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" \ 
+          --api-key ${{ secrets.PACKAGE_NUGET }}
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v2022074261
+          name: Release v2022074261
+          files: "**/*.nupkg"
